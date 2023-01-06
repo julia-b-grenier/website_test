@@ -1,7 +1,13 @@
-let d = new Date();
-document.body.innerHTML = "<h1>Today's date is " + d + "</h1>"
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.moving_letters .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-let p = document.createElement("P");
-let t = document.createTextNode("Paragraph text.");
-p.appendChild(t);
-document.body.appendChild(p);
+anime.timeline({loop: false})
+
+.add({
+    targets: '.moving_letters .letter',
+    translateY: ["1.5em", 0],
+    translateZ: 0,
+    duration: 1000,
+    delay: (el, i) => 20 * i
+});

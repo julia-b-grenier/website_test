@@ -1,20 +1,180 @@
 body {
-    background-color: #ffffff;
+    background-color: #F3F5F7;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2vh;
+    width: 80%;
+    min-height: 100vh;
+    position: relative;
+    margin: auto;
 }
- 
+
+body::after {
+  content: '';
+  display: block;
+  height: 50px; /* Set same as footer's height */
+}
+
+main {
+    animation: appear 1s linear forwards;
+}
+
+.section {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.block {
+    flex: 50%;
+    margin: auto;
+}
+
+.block3 {
+    flex: 30%;
+    margin: auto;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    padding: 50px;
+    border-radius: 20%;
+}
+
+#pfp {
+    border-radius: 50%;
+    opacity: 0.05;
+}
+
 h1 {
-    color: rgb(255, 131, 131);
-    font-family: Arial, Helvetica, sans-serif;
+    color: #58A4B0;
+    margin: 0;
+    font-size: 3.3em;
+}
+
+.moving_letters {
+  position: relative;
+  font-weight: 900;
+}
+
+.moving_letters .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.moving_letters .letter {
+  display: inline-block;
+  line-height: 0.5em;
+}
+
+h2 {
+    color: #0B5563;
+    margin-top: 0;
 }
 
 p {
-    color: #9ca5dd;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    color: #373F51;
+    text-align: justify;
+    font-size: 1.2em;
+    animation-delay: 0.5s;
 }
 
-li a {
-    color: #ddca9c;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
+nav {
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+nav ul {
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav li a {
+    padding: 8px;
+    color: #373F51;
+    font-size: 2em;
+    margin: 0;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    transition: 0.3s;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+
+
+@media only screen and (max-width: 900px) {
+    nav li a {
+        font-size: 1.5em;
+    }
+
+    body {
+        text-align: center;
+        width: 100%;
+        font-size: 0.8em;
+    }
+
+    p {
+        width: 80%;
+        font-size: 1.2em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1 {
+        color: #58A4B0;
+    }
+    
+    img {
+        width: 200px;
+    }
+
+    #pfp {
+        width: 200px;
+        padding-top: 20px;
+    }
+    
+    .section {
+        flex-direction: column;
+    }
+    
+    #intro {
+        flex-direction: column-reverse;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    body {
+        font-size: 0.6em;
+    }
+    #pfp {
+        width: 120px;
+    }
+}
+
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
